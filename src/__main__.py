@@ -12,7 +12,8 @@ class Main:
         """executes entire file. updates registers afterwards"""
         self.load_inputs("../resources/" + path_input_field.get())
         while True:
-            self.run_line()
+            if self.run_line():
+                return
 
     def run_single_line_button_action(self):
         """"""
@@ -21,9 +22,10 @@ class Main:
 
     def run_line(self):
         if self.current_line >= len(self.file_lines):
-            return
+            return True
         self.calculate_line(self.file_lines[self.current_line - 1])
         self.update_gui()
+        return False
 
     def calculate_line(self, line):
         params = line.split(",")
@@ -32,13 +34,13 @@ class Main:
             if i == 2:
                 continue
             if is_reg.match(params[i]):
-                params[i] = self.registers[int(params[i][1])]
+                params[i] = self.registers[int(params[i][1])-1]
                 continue
             params[i] = int(params[i])
         params[2] = int(params[2].replace("$", ""))
 
-        self.registers[params[2]-1] = params[0] - params[1]
-        self.current_line = int(params[3])
+        self.registers[params[2]-1] = int(params[0]) - int(params[1])
+        self.current_line = (self.current_line + 1) if params[0] - params[1] >= 0 else (params[3])
 
     def load_file(self, path):
         f = open(path, "r")
