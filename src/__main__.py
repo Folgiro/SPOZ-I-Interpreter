@@ -113,7 +113,7 @@ if __name__ == '__main__':
 
     path_label = Label(window, text="Pfad:")
     path_input_field = Entry(window, bd=5, width=40)
-    path_input_field.insert(0, "src.txt")
+    path_input_field.insert(0, "src/test.txt")
 
     # add elements
     run_button.grid(row=0, column=1)

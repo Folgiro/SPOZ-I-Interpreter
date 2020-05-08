@@ -1,9 +1,0 @@
-1 :0, 0,$3, 2 //Initialisiere Register 3 mit 0
-2 :$2, 0,$2, 4 //¨Uberpr¨ufe ob b negativ, dann springe in Zeile 3.
-3 :0, 1,$5, 6 //Springe in Zeile 6.
-4 :0, $1,$1, 5 //Negiere a, wenn b negativ.
-5 :0, $2,$2, 6 //Negiere b, wenn b negativ.
-6 :0, $1,$4, 7 //Speichere das negierte a in Register 4.
-7 :$2, 1,$2,10 //Ziehe 1 von b ab, wenn b dann negativ ist, beende.
-8 :$3,$4,$3, 9 //Ziehe das negierte a vom Ergebnis ab.
-9 :0, 1,$6, 7 //Springe in Zeile 6.
