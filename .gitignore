@@ -3,7 +3,7 @@
 /build/
 /dist/
 /__main__.spec
-src/build/
-src/dist/
-src/__pycache__/
-src/__main__.spec
+/src/build/
+/src/dist/
+/src/__pycache__/
+/src/__main__.spec
