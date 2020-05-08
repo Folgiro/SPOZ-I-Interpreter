@@ -1,1 +1,8 @@
 /resources/src/
+/venv/
+/build/
+/dist/
+/__main__.spec
+/src/build/
+/src/dist/
+src/__main__.spec
