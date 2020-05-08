@@ -21,7 +21,7 @@ class Main:
         self.run_line()
 
     def run_line(self):
-        if self.current_line >= len(self.file_lines):
+        if self.current_line > len(self.file_lines):
             return True
         self.calculate_line(self.file_lines[self.current_line - 1])
         self.update_gui()
